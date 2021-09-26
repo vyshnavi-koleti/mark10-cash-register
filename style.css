@@ -1,9 +1,103 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --primary-color: #14B8A6;
+    --blue-gray: #475569;
+    --true-gray: #E5E5E5;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    display: block;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+}
+
+.heading {
+    color: var(--primary-color);
+    margin: auto;
+    padding: 1rem;
 
 }
 
+.description {
+    color: var(--blue-gray);
+    margin: auto;
+    padding: 1rem;
+}
 
-.container{
-    display: flex;
-    flex-direction: column;
+.label-input {
+    padding: 0.5rem;
+    color: var(--blue-gray);
+    font-size: x-large;
+}
+
+#bill-amount {
+    border: 2px solid var(--primary-color);
+    margin: auto;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    color: var(--blue-gray);
+
+}
+
+#cash-given {
+    border: 2px solid var(--primary-color);
+    margin: auto;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    color: var(--blue-gray);
+}
+
+#check-button {
+    margin: 1rem auto 1rem auto;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: larger;
+    color: var(--blue-gray)
+}
+
+#error-message {
+
+    color: var(--blue-gray);
+
+}
+
+.table-change {
+    color: var(--blue-gray);
+    margin: auto;
+    padding: 1rem;
+    text-align: justify;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
+#return-change {
+    padding-bottom: 1rem;
+    font-size: x-large;
+}
+
+tbody {
+
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-radius: 2rem;
+}
+
+td,
+th {
+
+    border-color: inherit;
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+
+
 }
