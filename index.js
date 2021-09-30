@@ -11,14 +11,18 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
     hideMessage();
     if (billAmount.value > 0) {
 
-        if (parseInt(cashGiven.value) >= parseInt(billAmount.value)) {
+        if (parseInt(cashGiven.value) > parseInt(billAmount.value)) {
 
             const amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
 
+        } else if (parseInt(cashGiven.value) === parseInt(billAmount.value)) {
+
+            showMessage("I owe you nothing");
+
         } else {
 
-            showMessage("The cash provided should be atleast equal to the bill amount");
+            showMessage("Add some weight to your wallet buddy!");
         }
 
     } else {
@@ -28,7 +32,7 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
 });
 
 function hideMessage() {
-    message.style.display  = "none";
+    message.style.display = "none";
 }
 
 function showMessage(msg) {
@@ -38,8 +42,8 @@ function showMessage(msg) {
 
 function calculateChange(amountToBeReturned) {
 
-    for( var i = 0; i < notesAvailable.length; i++){
-        const numberOfNotes = Math.trunc( amountToBeReturned / notesAvailable[i]);
+    for (var i = 0; i < notesAvailable.length; i++) {
+        const numberOfNotes = Math.trunc(amountToBeReturned / notesAvailable[i]);
         amountToBeReturned = amountToBeReturned % notesAvailable[i];
         noOfNotes[i].innerText = numberOfNotes;
     }
